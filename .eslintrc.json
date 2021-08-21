@@ -41,7 +41,6 @@
       }
     ],
     "object-curly-newline": "off",
-    "no-undef": "off",
-    "linebreak-style": ["error", "windows"]
+    "no-undef": "off"
   }
 }
