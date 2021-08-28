@@ -1,4 +1,3 @@
-const minutes = 60000;
 db.trips.aggregate([
   {
     $match: {
@@ -8,13 +7,13 @@ db.trips.aggregate([
   {
     $group: {
       _id: null,
-      mediaTime: { $avg: { $substract: ["$stopTime", "$startTime"] } },
+      mediaTime: { $avg: { $subtract: ["$stopTime", "$startTime"] } },
     },
   },
   {
     $project: {
       _id: 0,
-      duracaoMediaEmMinutos: { $ceil: { $divide: ["$mediaTime", minutes] } },
+      duracaoMediaEmMinutos: { $ceil: { $divide: ["$mediaTime", 60000] } },
     },
   },
 ]);
